@@ -37,6 +37,7 @@
     padding: 1vw 2.3vw;
     background-color: white;
     font-size: max(1vw, 13px);
+    cursor: pointer;
 }
 
 @media (max-width:1050px) {

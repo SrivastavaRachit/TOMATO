@@ -4,7 +4,7 @@ import { assets } from '../../assets/assets'
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-
+    const [login, setLogin] = useState(true);
     const navigate = useNavigate();
 
     return (
@@ -13,9 +13,11 @@ const Navbar = () => {
             <div className='navbar-profile'>
                 <img src={assets.profile_image} alt="" />
                 <ul className='nav-profile-dropdown'>
-                    <li><p>Sign In</p></li>
-                    <hr />
-                    <li><p>Log Out</p></li>
+                    <li>
+                        {login && <p onClick={() => { setLogin(false) }}>Sign In</p>}
+                        <hr />
+                        {!login && <p onClick={() => { setLogin(true); }}>Log Out</p>}
+                    </li>
                 </ul>
             </div>
         </div>
